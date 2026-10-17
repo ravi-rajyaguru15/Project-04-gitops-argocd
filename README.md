@@ -1,5 +1,5 @@
 
-# Project 3: EKS Infrastructure Deployment with Terraform, GitHub Actions CI/CD, and Observability  
+# Project 4: EKS Infrastructure Deployment with Terraform, GitHub Actions CI/CD, and Observability  
 
 [![Infrastructure](https://img.shields.io/badge/IaC-Terraform-blue)](#)
 [![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub_Actions-green)](#)
