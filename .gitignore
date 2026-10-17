@@ -1,0 +1,42 @@
+# Terraform
+.terraform/
+*.exe
+*.zip
+*.auto.tfvars*
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+terraform.tfvars
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Java / Gradle / Maven build output
+target/
+build/
+*.jar
+*.war
+
+# Node modules and Python caches (just in case)
+node_modules/
+__pycache__/
+
+# OS-specific
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Kubernetes
+kubeconfig
+.kube/
+
+# IDE and editor folders
+.vscode/
+.idea/
+
+# GitHub Actions secrets (if any)
+.env
