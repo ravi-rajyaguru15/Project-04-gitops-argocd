@@ -4,9 +4,6 @@ on:
   pull_request:
     branches:
       - main
-    paths:
-      - 'legacy/app/**'
-      - '.github/workflows/ci.yml'
 
 permissions:
   contents: read
