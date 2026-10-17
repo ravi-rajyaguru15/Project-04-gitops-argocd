@@ -291,3 +291,6 @@ This project intentionally focuses on Terraform-based EKS infrastructure provisi
 - **Multi-environment workflow**: Extending the project toward separate dev/staging/prod-style environments with clearer promotion, approval, and rollback patterns.
 
 These are not included in the current implementation because the scope of this portfolio stage is to demonstrate the core platform-building blocks: infrastructure as code, Kubernetes deployment automation, persistent storage integration, CI/CD, and observability fundamentals.
+
+
+Change.
