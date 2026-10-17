@@ -3,8 +3,10 @@ package com.visualpathit.account.controllerTest;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.forwardedUrl;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrl;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
+import static org.mockito.Mockito.when;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -17,6 +19,7 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.visualpathit.account.controller.UserController;
 import com.visualpathit.account.model.User;
+import com.visualpathit.account.service.SecurityService;
 import com.visualpathit.account.service.UserService;
 import com.visualpathit.account.setup.StandaloneMvcTestViewResolver;
 
@@ -27,6 +30,8 @@ public class UserControllerTest {
 	
 	@Mock
 	private UserService controllerSer;
+	@Mock
+	private SecurityService securityService;
 	@InjectMocks
 	private UserController controller;
 	private MockMvc mockMvc;
@@ -77,8 +82,7 @@ public class UserControllerTest {
 	}*/
 	@Test
 	public void loginTestHappyFlow() throws Exception{
-		String error = "Your username and password is invalid";
-		mockMvc.perform(get("/login").param(error, error))
+		mockMvc.perform(get("/"))
         .andExpect(status().isOk())
         .andExpect(view().name("login"))
         .andExpect(forwardedUrl("login"));
@@ -94,11 +98,12 @@ public class UserControllerTest {
 	}
 	@Test
 	public void welcomeAfterDirectLoginTestHappyFlow() throws Exception{
-		mockMvc.perform(get("/"))
-        .andExpect(status().isOk())
-        .andExpect(view().name("welcome"))
-        .andExpect(forwardedUrl("welcome"));
-		
+		when(securityService.autologin("testuser", "password")).thenReturn(true);
+		mockMvc.perform(post("/login")
+				.param("username", "testuser")
+				.param("password", "password"))
+        .andExpect(status().is3xxRedirection())
+        .andExpect(redirectedUrl("/welcome"));
 	}
 	@Test
 	public void indexTestHappyFlow() throws Exception{
