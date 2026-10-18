@@ -17,7 +17,7 @@ spec:
       enableServiceLinks: false
       containers:
         - name: web-app
-          image: ravi11rajyaguru/my-app
+          image: ravi11rajyaguru/my-app-p4:a85cf9cad5f743ed0c25637dcfba557924bcc940
           imagePullPolicy: Always
           ports:
             - name: web-app-port
