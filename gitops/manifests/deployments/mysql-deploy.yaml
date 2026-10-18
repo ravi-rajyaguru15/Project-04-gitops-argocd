@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: mysql-db
-          image: ravi11rajyaguru/my-db
+          image: ravi11rajyaguru/my-db-p4:v1
           volumeMounts:
             - mountPath: /var/lib/mysql
               name: mysql-pvc
