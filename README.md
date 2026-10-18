@@ -292,5 +292,3 @@ This project intentionally focuses on Terraform-based EKS infrastructure provisi
 
 These are not included in the current implementation because the scope of this portfolio stage is to demonstrate the core platform-building blocks: infrastructure as code, Kubernetes deployment automation, persistent storage integration, CI/CD, and observability fundamentals.
 
-
-Change.
