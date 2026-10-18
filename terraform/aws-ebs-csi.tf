@@ -9,11 +9,11 @@ data "aws_iam_policy_document" "ebs_csi_assume" {
 
     principals {
       type        = "Federated"
-      identifiers = [module.eks.oidc_provider_arn]          # from v19 module
+      identifiers = [module.eks.oidc_provider_arn] # from v19 module
     }
 
     condition {
-      test     = "StringEquals"
+      test = "StringEquals"
       # strip the https:// prefix from issuer URL
       variable = "${replace(module.eks.oidc_provider, "https://", "")}:sub"
       values   = ["system:serviceaccount:kube-system:ebs-csi-controller-sa"]

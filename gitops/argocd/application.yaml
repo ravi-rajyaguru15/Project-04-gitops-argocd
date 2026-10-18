@@ -6,9 +6,9 @@ metadata:
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: project4-gitops-argocd
+  project: default
   source:
-    repoURL: git@github.com:<GithubAccountName>/<GitRepoName>.git
+    repoURL: https://github.com/ravi-rajyaguru15/Project-04-gitops-argocd.git
     targetRevision: main
     path: gitops/manifests
     directory:
