@@ -8,7 +8,7 @@
 
 ---
 
-## About the 3-Project DevOps System
+## About the 4-Project DevOps System
 
 This self-designed, 4-part DevOps portfolio series is intended to demonstrate the staged cloud migration and infrastructure maturity path of a multi-service web application: from containerization, to Kubernetes orchestration, to infrastructure automation, CI/CD, and observability, and finally to GitOps-based application delivery.
 
