@@ -9,6 +9,8 @@ on:
       - main
     paths-ignore:
       - 'gitops/manifests/deployments/app-deploy.yaml'
+      - 'README.md'
+      - 'images/**'
 
 permissions:
   contents: read
